@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/searchText"
+        android:hint="Search location"
+        android:layout_toStartOf="@+id/searchButton"
+        android:layout_width="290dp" />
+
+    <Button
+        android:text="Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchButton"
+        android:layout_alignParentEnd="true"
+        android:onClick="onSearch"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:text="Change map type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/changeType"
+        android:layout_below="@+id/searchButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/startTrip"
+        android:onClick="onChangeType"
+        android:layout_alignEnd="@+id/distTime" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="377dp"
+        tools:context="com.example.ziyadelgendy.raye7challenge.MapsActivity"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="360dp" />
+
+    <TextView
+        android:id="@+id/distTime"
+        android:layout_below="@+id/changeType"
+        android:layout_alignParentStart="true"
+        android:layout_height="40dp"
+        android:layout_width="200dp" />
+
+    <Button
+        android:text="Current location"
+        android:id="@+id/locToSrc"
+        android:layout_height="wrap_content"
+        android:onClick="onLocToSrc"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/startTrip"
+        android:layout_alignEnd="@+id/map" />
+
+    <Button
+        android:text="Start trip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startTrip"
+        android:onClick="onStartTrip"
+        android:layout_below="@+id/searchButton"
+        android:layout_alignEnd="@+id/locToSrc"
+        android:layout_alignStart="@+id/locToSrc" />
+
+</RelativeLayout>
